@@ -1,12 +1,7 @@
-<!-- templates/result.html -->
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Result</title>
-</head>
-<body>
-    <h2>Submitted Data:</h2>
-    <p><strong>Name:</strong> {{ name }}</p>
-    <p><strong>Email:</strong> {{ email }}</p>
-</body>
-</html>
+{% extends 'base.html' %}
+{% block title %}Result{% endblock %}
+{% block content %}
+<h2>Form Submitted Successfully!</h2>
+<p>Name: {{ name }}</p>
+<p>Email: {{ email }}</p>
+{% endblock %}

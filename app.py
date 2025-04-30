@@ -1,3 +1,4 @@
+import sqlite3 
 from flask import Flask, render_template, request
 
 app = Flask(__name__)
@@ -22,12 +23,29 @@ def contact():
 def form():
     return render_template('form.html')
 
-# Submit Page (for form)
 @app.route('/submit', methods=['POST'])
 def submit():
     name = request.form['name']
     email = request.form['email']
+
+    # Database me insert karna
+    conn = sqlite3.connect('users.db')
+    cursor = conn.cursor()
+    cursor.execute("INSERT INTO users (name, email) VALUES (?, ?)", (name, email))
+    conn.commit()
+    conn.close()
+
     return render_template('result.html', name=name, email=email)
+
+@app.route('/users')
+def users():
+    conn = sqlite3.connect('users.db')
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM users")
+    data = cursor.fetchall()
+    conn.close()
+    return render_template('users_data.html', users=data)
+
 
 if __name__ == '__main__':
     app.run(debug=True)
