@@ -1,4 +1,4 @@
-<!-- users_data.html -->
+<!-- users.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,10 +7,10 @@
     <title>Users List</title>
 </head>
 <body>
-    <h1>List of Users</h1>
+    <h1>Users List</h1>
     <ul>
         {% for user in users %}
-            <li>{{ user[1] }} - {{ user[2] }}</li> <!-- user[1] is name, user[2] is email -->
+            <li>{{ user.name }} - {{ user.email }}</li>
         {% endfor %}
     </ul>
     <br><br>

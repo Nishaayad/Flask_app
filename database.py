@@ -1,6 +1,6 @@
 import sqlite3
 
-conn = sqlite3.connect('users.db')
+conn = sqlite3.connect('users-from-db.db')
 cursor = conn.cursor()
 
 # Table create karo (sirf 1 baar chalana h)

@@ -1,12 +1,23 @@
-{% extends 'base.html' %}
-{% block title %}Form{% endblock %}
-{% block content %}
-<h2>Submit Your Details</h2>
-<form action="/submit" method="post">
-    <label>Name:</label><br>
-    <input type="text" name="name" required><br><br>
-    <label>Email:</label><br>
-    <input type="email" name="email" required><br><br>
-    <input type="submit" value="Submit">
-</form>
-{% endblock %}
+<!-- form.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+    <h1>Enter your details:</h1>
+    <form action="{{ url_for('submit') }}" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+    <br><br>
+    <a href="{{ url_for('home') }}">Go to Home</a>
+</body>
+</html>

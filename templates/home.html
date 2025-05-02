@@ -1,7 +1,9 @@
+<!-- templates/home.html -->
 {% extends 'base.html' %}
-{% block title %}Home{% endblock %}
-{% block content %}
-<h2>Welcome to My Website!</h2>
-<p>This is the home page.</p>
-{% endblock %}
 
+{% block title %}Welcome Page{% endblock %}
+
+{% block content %}
+    <h2>Welcome, {{ naam }}!</h2>
+    <p>This is a dynamic Jinja2-powered page. 🌟</p>
+{% endblock %}
