@@ -1,0 +1,11 @@
+<!-- templates/logout.html -->
+{% extends 'base.html' %}
+
+{% block title %}Logout{% endblock %}
+
+{% block content %}
+<div class="form-container">
+    <h2>You have been logged out successfully 💖</h2>
+    <a href="{{ url_for('login') }}" class="btn">Login Again</a>
+</div>
+{% endblock %}

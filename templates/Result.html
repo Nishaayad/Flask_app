@@ -1,19 +1,7 @@
-<!-- result.html -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Submission Result</title>
-</head>
-<body>
-    <h1>Submission Successful!</h1>
-    <p>Thank you for submitting your details:</p>
-    <ul>
-        <li>Name: {{ name }}</li>
-        <li>Email: {{ email }}</li>
-    </ul>
-    <br><br>
-    <a href="{{ url_for('users_from_db') }}">View All Users</a>
-</body>
-</html>
+{% extends 'base.html' %}
+{% block title %}Submission Result{% endblock %}
+{% block content %}
+    <h2>Form Submitted Successfully! 🎊</h2>
+    <p><strong>Name:</strong> {{ name }}</p>
+    <p><strong>Email:</strong> {{ email }}</p>
+{% endblock %}

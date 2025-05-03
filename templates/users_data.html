@@ -1,19 +1,18 @@
-<!-- users_data.html -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Users List</title>
-</head>
-<body>
-    <h1>List of Users</h1>
-    <ul>
+{% extends 'base.html' %}
+{% block title %}Users{% endblock %}
+{% block content %}
+    <h2>Registered Users</h2>
+    <table border="1" cellpadding="5" cellspacing="0">
+        <tr>
+            <th>ID</th><th>Name</th><th>Email</th><th>Username</th>
+        </tr>
         {% for user in users %}
-            <li>{{ user[1] }} - {{ user[2] }}</li> <!-- user[1] is name, user[2] is email -->
+        <tr>
+            <td>{{ user[0] }}</td>
+            <td>{{ user[1] }}</td>
+            <td>{{ user[2] }}</td>
+            <td>{{ user[3] }}</td>
+        </tr>
         {% endfor %}
-    </ul>
-    <br><br>
-    <a href="{{ url_for('home') }}">Go to Home</a>
-</body>
-</html>
+    </table>
+{% endblock %}
